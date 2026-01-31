@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { ContactForm, Button } from "../components/ui.tsx";
+
+
+
+
+const t = {
+
+    title: "Contact Us",
+
+};
+---
+
+<BaseLayout pageTitle={t.title} >
+  <section class="max-w-xl mx-auto px-4 py-12">
+    <ContactForm  client:only="react" />
+  </section>
+          <div class="text-center">
+      <Button
+        text= "Back to home page"
+        href={`/`}
+        variant="secondary"
+      />
+    </div>
+</BaseLayout>

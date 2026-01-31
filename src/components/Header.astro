@@ -1,0 +1,22 @@
+---
+import Hamburger from './Hamburger.astro';
+import Navigation from './Navigation.astro';
+import { header, logo, langlink } from '../styles/styles';
+
+
+---
+<header class={header} >
+    <nav>
+    <Hamburger />
+    <Navigation />
+  </nav>
+  <div class={logo}>
+    <a href={`/`}>
+      <img src="/Logo copy.png" alt="Logo" class="h-10 w-auto" />
+    </a>
+
+  </div>
+
+
+</header>
+

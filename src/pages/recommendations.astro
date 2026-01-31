@@ -1,0 +1,15 @@
+---
+import RecommendationsPage from "../components/RecommendationsPage.tsx";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const t = {
+
+    title: "Contact Us",
+
+  
+};
+---
+<BaseLayout pageTitle={t.title} >
+
+<RecommendationsPage client:only="react" />
+</BaseLayout>

@@ -1,17 +1,117 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SectionItem, RoundButton } from "../components/ui";
+import RecommendationsCarousel from "../components/Carousel";
+import { ContactForm } from "../components/ui";
+import ImageWall from "../components/ImageWall";
 
+
+
+const { params } = Astro;
+const t = {
+
+	    aboutTitle: 'About',
+ 
+    video: "Video and Motion",
+        animation: "3D Animation",
+    photo: "Photography",
+    contact: 'Contact',
+    recommendations: 'Recommendations',
+    pageTitle: "Home",
+    heroTitle: "Naama Ofir",
+    subtitle: "Editor, Designer and Animator",
+
+        aboutButton: "Learn More",
+
+    servicesButton: "More info",
+
+  
+};
+
+const sections = ["hero","culture", "food", "graffiti",  "recs", "about","contact"];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={t.pageTitle} >
+
+    <!-- Hero -->
+    <section id="hero" class="relative w-full  flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent" />
+      <div class="relative z-10 flex flex-col items-center text-center gap-6 px-4">
+          <div
+      class={`flex items-center justify-center gap-6 flex-row-reverse`}
+    >
+        <img src="/Logo copy.png" alt="Logo" class="w-40 md:w-60" />
+
+
+        </div>
+        <h3 class="text-[var(--accent)] text-2xl md:text-3xl font-bold drop-shadow-lg">{t.subtitle}</h3>
+
+      </div>
+    </section>
+
+	<section class="w-full">
+  <ImageWall client:visible />
+</section>
+			        <div class="flex flex-wrap justify-center gap-4 mt-4">
+          <RoundButton text="/facebook.svg" href="https://www.facebook.com/naama.ofir" />
+          <RoundButton text="/Digital_Glyph_Black.svg" href="https://wa.me/972544422615" />
+          <RoundButton text="/email.svg" href="mailto:nofir6993@gmail.com" />
+		            <RoundButton text="/Instagram_Glyph_Black.svg" href="mailto:nofir6993@gmail.com" />
+
+        </div>
+    <!-- Tours -->
+    <section id="video" class="w-full flex justify-center">
+      <SectionItem
+        title={t.video}
+        imageSrc="/rd.png",
+           buttonText={t.servicesButton}
+        buttonHref={`/video-and-motion`}
+      />
+    </section>
+
+    <!-- Food -->
+    <section id="animation" class="w-full flex justify-center ">
+      <SectionItem
+        title={t.animation}
+        imageSrc="/rd.png"
+        buttonText={t.servicesButton}
+        buttonHref={`/3d-animation`}
+      />
+    </section>
+
+    <!-- About -->
+    <section id="photo" class="w-full flex justify-center ">
+      <SectionItem
+        title={t.photo}
+        imageSrc="/rd.png"
+        buttonText={t.servicesButton}
+        buttonHref={`/photography`}
+      />
+    </section>
+
+
+
+    <!-- Recommendations -->
+    <section id="recs" class="py-10 w-full">
+      <h2 class="text-3xl font-bold text-center mb-8 text-[var(--light)]">
+        {t.recommendations}
+      </h2>
+      <RecommendationsCarousel client:only="react"  />
+    </section>
+
+    <!-- about -->
+    <section id="about" class="w-full flex justify-center ">
+      <SectionItem
+        title={t.aboutTitle}
+        imageSrc="/rd.png"
+        imageAlt="תמונה לדוגמה"
+        buttonText={t.aboutButton}
+        buttonHref={`/about`}
+      />
+    </section>
+
+    <section id="contact" class="max-w-xl mx-auto px-4 py-12">
+
+    <ContactForm  client:only="react" />
+  </section>
+</BaseLayout>

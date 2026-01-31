@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Button } from "../components/ui";
+
+
+
+const t = {
+
+    title: "Thank you!",
+    message: "Your form has been submitted successfully. We’ll get back to you soon.",
+    back: "Back to Homepage",
+};
+---
+
+<BaseLayout pageTitle={t.title} >
+  <section class="flex flex-col items-center justify-center min-h-[60vh] px-4 py-12 text-center">
+    <h1 class="text-3xl text-black md:text-4xl font-bold mb-4">{t.title}</h1>
+    <p class="text-gray-600 text-lg mb-8 max-w-xl">{t.message}</p>
+        <div class="text-center">
+      <Button
+        text= "Back to home page"
+        href={`/`}
+        variant="secondary"
+      />
+    </div>
+  </section>
+</BaseLayout>

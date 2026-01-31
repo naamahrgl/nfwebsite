@@ -1,0 +1,53 @@
+---
+// src/pages/[lang]/about.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Box, Title, Button, Image } from '../components/ui';
+
+
+
+const content = {
+
+    title: "About Me",
+    paragraphs: [
+"Hi, I'm Naama.",
+" I'm a video editor, motion designer, and 3D character animator proficient in After Effects, Premiere Pro, and the Adobe Suite, as well as Maya and Blender.",
+"When I’m not animating, you’ll likely find me behind a camera pursuing my passion for photography.",
+
+"EDUCATION",
+
+"BA / Animation - Bezalel Academy of Art & Design",
+"Jerusalem, Israel"
+    ],
+
+};
+
+
+---
+
+<BaseLayout pageTitle={content.title} }>
+  <section class="py-16 md:py-24 px-4">
+    <div class="container mx-auto flex flex-col gap-8">
+      <Box className="p-8 ">
+        <Title text={content.title} size="lg" className="mb-2" />
+
+        {content.paragraphs.map((p, idx) => (
+          <p class="mb-4 text-[var(--light)] leading-relaxed">{p}</p>
+        ))}
+    <Image src="/about.jpg" alt='' className="w-full h-full rounded-lg shadow-lg" />
+
+
+      </Box>
+
+    </div>
+
+  </section>
+    <section class="max-w-6xl mx-auto px-4 py-12">
+        <div class="text-center">
+      <Button
+        text= "Back to home page"
+        href={`/`}
+        variant="secondary"
+      />
+    </div>
+  </section>
+</BaseLayout>
