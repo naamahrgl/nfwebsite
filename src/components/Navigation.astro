@@ -13,14 +13,13 @@ const container = containerClass ?? navlinks;
 const linkClass = overrideClass ?? navlinkItem;
 
 const t = {
-    home: 'Home',
-    about: 'About',
+    home: 'HOME',
+    about: 'ABOUT',
  
-    video: "Video and Motion",
-        animation: "3D Animation",
-    photo: "Photography",
-    contact: 'Contact',
-    recs: 'Recommendations',
+    video: "VIDEO & MOTION",
+        animation: "3D ANIMATION",
+    photo: "PHOTOGRAPHY",
+    contact: 'CONTACT',
 
 };
 
@@ -30,10 +29,9 @@ const t = {
       <a href=`/contact/` class={linkClass}>{t.contact}</a>
 
   <a href=`/about/` class={linkClass}>{t.about}</a>
-    <a href=`/video-and-motion/` class={linkClass}>{t.video}</a>
-  <a href=`/3d-animation/` class={linkClass}>{t.animation}</a>
+    <a href=`/video_and_motion/` class={linkClass}>{t.video}</a>
+  <a href=`/animation_3d/` class={linkClass}>{t.animation}</a>
     <a href=`/photography/` class={linkClass}>{t.photo}</a>
-        <a href=`/recommendations/` class={linkClass}>{t.recs}</a>
 
       <a href=`/` class={linkClass}>{t.home}</a>
 

@@ -5,18 +5,19 @@ import { header, logo, langlink } from '../styles/styles';
 
 
 ---
-<header class={header} >
-    <nav>
+<header class={header}>
+  <div class="flex w-full items-center justify-between lg:justify-start lg:flex-col gap-4">
+    
+    <div class={logo}>
+      <a href="/">
+        <img src="/Logo copy.png" alt="Logo" class="w-auto" />
+      </a>
+    </div>
+
     <Hamburger />
     <Navigation />
-  </nav>
-  <div class={logo}>
-    <a href={`/`}>
-      <img src="/Logo copy.png" alt="Logo" class="h-10 w-auto" />
-    </a>
 
   </div>
-
-
 </header>
+
 

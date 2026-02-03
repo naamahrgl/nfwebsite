@@ -1,9 +1,21 @@
-export const hamburger = "flex flex-col justify-between w-6 h-5 cursor-pointer  group ";
+export const hamburger =
+  "flex flex-col justify-between w-6 h-6 cursor-pointer group lg:hidden";
 export const line = "block h-0.5 w-full bg-[var(--light)] mb-1 group-hover:bg-black";
-export const navlinks = "hidden absolute top-full left-0 flex flex-col gap-2 bg-[var(--light)] p-4 z-50";
-export const navlinkItem = "text-[var(--accent)] hover:text-black transition-colors duration-150";
+export const navlinks =
+  `
+  hidden
+  lg:flex
+  flex-col
+  gap-3
+  bg-[var(--accent)]
+  p-4
+  z-50
+  lg:static
+  fixed inset-0
+  `;
+export const navlinkItem = "text-[var(--light)] hover:text-[var(--main)] transition-colors duration-150";
 export const header =
-  "relative w-full flex items-center justify-between p-4 bg-[var(--accent)] sticky top-0 z-50";
+  "relative    p-4 bg-[var(--accent)] flex flex-col lg:flex-row  ";
 export const logo = "flex items-center gap-2";  
 export const langlink =
   "text-[10px] md:text-sm text-[var(--light)] hover:text-black transition-colors duration-150";

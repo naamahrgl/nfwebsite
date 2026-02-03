@@ -7,7 +7,10 @@ import { line , hamburger, navlinks} from "../styles/styles"
     <span class={line}></span>
 </div>
 <script>
-  document.getElementById('hamburger')?.addEventListener('click', () => {
-    document.getElementById('navlinks')?.classList.toggle('hidden');
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('navlinks');
+
+  btn?.addEventListener('click', () => {
+    nav?.classList.toggle('hidden');
   });
 </script>
