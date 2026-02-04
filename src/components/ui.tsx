@@ -9,8 +9,8 @@ export const TW = {
   },
   buttons: {
     base: "px-6 py-2 rounded-full font-semibold transition-all duration-200",
-    primary: "bg-white/20 text-white hover:bg-white/40",
-    secondary: "bg-[var(--accent)] text-white hover:bg-[#E8E9EB]",
+    primary: "bg-black/20 text-white hover:bg-white/20",
+    secondary: "bg-[var(--light)] text-white hover:bg-[#E8E9EB]",
             roundbase: "p-2  items-center justify-center",
     round: "w-12 h-12 rounded-full  bg-[var(--light)] items-center justify-center ",
 
@@ -183,40 +183,40 @@ export function ContactForm() {
     <form
       method="POST"
       action="/api/contact"
-      className="space-y-4 w-full max-w-md mx-auto text-center bg-[var(--accent)] rounded-lg"
+      className="space-y-4 w-full max-w-md mx-auto text-center bg-[var(--main)] rounded-lg"
     >
-      <Title text={t.title} size="md" className="mb-6" />
+      <Title text={t.title} size="md" className="mb-6 " />
 
       <input
         type="text"
         name="name"
         placeholder={t.name}
         required
-        className="w-full p-3 rounded-md bg-white/30 text-black placeholder-black/60"
+        className="w-full p-3 rounded-md bg-white/30 border text-black placeholder-black/60"
       />
 
       <input
         type="email"
         name="email"
         placeholder={t.email}
-        className="w-full p-3 rounded-md bg-white/30 text-black placeholder-black/60"
+        className="w-full p-3 rounded-md bg-white/30 border text-black placeholder-black/60"
       />
 
       <input
         type="tel"
         name="phone"
         placeholder={t.phone}
-        className="w-full p-3 rounded-md bg-white/30 text-black placeholder-black/60"
+        className="w-full p-3 rounded-md bg-white/30 border text-black placeholder-black/60"
       />
 
       <textarea
         name="message"
         placeholder={t.message}
         required
-        className="w-full p-3 rounded-md bg-white/30 text-black placeholder-black/60 h-32"
+        className="w-full p-3 rounded-md bg-white/30 border text-black placeholder-black/60 h-32"
       />
 
-      <Button text={t.submit} variant="primary" className="w-full mt-2" />
+      <Button text={t.submit} variant="secondary" className="w-full mt-2 border" />
     </form>
   );
 }

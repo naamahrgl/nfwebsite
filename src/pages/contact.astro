@@ -7,12 +7,13 @@ import { ContactForm, Button } from "../components/ui.tsx";
 
 const t = {
 
-    title: "Contact Us",
+    title: "Contact",
 
 };
 ---
 
 <BaseLayout pageTitle={t.title} >
+
   <section class="max-w-xl mx-auto px-4 py-12">
     <ContactForm  client:only="react" />
   </section>

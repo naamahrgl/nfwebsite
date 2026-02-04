@@ -12,15 +12,17 @@ export const navlinks =
   z-50
   lg:static
   fixed inset-0
+flex
+   text-center 
   `;
-export const navlinkItem = "text-[var(--light)] hover:text-[var(--main)] transition-colors duration-150";
+export const navlinkItem = "text-[var(--light)]    hover:text-[var(--main)] transition-colors duration-150";
 export const header =
   "relative    p-4 bg-[var(--accent)] flex flex-col lg:flex-row  ";
 export const logo = "flex items-center gap-2";  
 export const langlink =
   "text-[10px] md:text-sm text-[var(--light)] hover:text-black transition-colors duration-150";
 
-export const footer = "w-full bg-[var(--light)] border-t  text-[var(--accent)] text-sm";
+export const footer = "w-full bg-[var(--main)] border-t  text-[var(--light)] text-sm";
 export const footerContainer = "max-w-6xl mx-auto px-4 py-10 flex justify-between";
 export const footerSection = "w-1/3 text-center break-words"; 
 export const footerHeading = "font-semibold mb-2"; 
