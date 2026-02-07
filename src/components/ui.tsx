@@ -171,7 +171,7 @@ export function SectionItem({
 export function ContactForm() {
   const t = {
 
-      title: "Contact Us",
+      title: "Contact",
       name: "Full Name",
       email: "Email",
       phone: "Phone",
@@ -186,7 +186,9 @@ export function ContactForm() {
       className="space-y-4 w-full max-w-md mx-auto text-center bg-[var(--main)] rounded-lg"
     >
       <Title text={t.title} size="md" className="mb-6 " />
-
+            <div className="text-sm font-medium text-neutral-900">
+              Fill out form or contact me at nofir6993@gmail.com
+          </div>
       <input
         type="text"
         name="name"

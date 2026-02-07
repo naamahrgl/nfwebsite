@@ -1,5 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MediaGallery from '../components/Gallery'
+import GridWall from "../components/GridWall";
+import { homeMedia } from "../media/home";
+import { VideoModal } from "../components/Modal"
+import type { MediaItem } from "../components/GridWall";
 import { SectionItem, RoundButton } from "../components/ui";
 import RecommendationsCarousel from "../components/Carousel";
 import { ContactForm } from "../components/ui";
@@ -9,7 +14,7 @@ import ImageWall from "../components/ImageWall";
 
 const { params } = Astro;
 const t = {
-
+title: 'Naama Ofir',
 	    aboutTitle: 'About',
  
     video: "Video and Motion",
@@ -29,69 +34,11 @@ const t = {
 };
 
 const sections = ["hero","culture", "food", "graffiti",  "recs", "about","contact"];
+
 ---
 
-<BaseLayout pageTitle={t.pageTitle} >
 
+<BaseLayout pageTitle={t.title}>
+  <MediaGallery items={homeMedia.items} client:visible />
 
-
-	<section class="w-full">
-  <ImageWall client:visible />
-</section>
-			        <div class="flex flex-wrap justify-center gap-4 mt-4">
-          <RoundButton text="/facebook.svg" href="https://www.facebook.com/naama.ofir" />
-          <RoundButton text="/Digital_Glyph_Black.svg" href="https://wa.me/972544422615" />
-          <RoundButton text="/email.svg" href="mailto:nofir6993@gmail.com" />
-		            <RoundButton text="/Instagram_Glyph_Black.svg" href="mailto:nofir6993@gmail.com" />
-
-        </div>
-    <!-- Tours -->
-    <section id="video" class="w-full flex justify-center">
-      <SectionItem
-        title={t.video}
-        imageSrc="/rd.png",
-           buttonText={t.servicesButton}
-        buttonHref={`/video_and_motion`}
-      />
-    </section>
-
-    <!-- Food -->
-    <section id="animation" class="w-full flex justify-center ">
-      <SectionItem
-        title={t.animation}
-        imageSrc="/rd.png"
-        buttonText={t.servicesButton}
-        buttonHref={`/animation_3d`}
-      />
-    </section>
-
-    <!-- About -->
-    <section id="photo" class="w-full flex justify-center ">
-      <SectionItem
-        title={t.photo}
-        imageSrc="/rd.png"
-        buttonText={t.servicesButton}
-        buttonHref={`/photography`}
-      />
-    </section>
-
-
-
-
-
-    <!-- about -->
-    <section id="about" class="w-full flex justify-center ">
-      <SectionItem
-        title={t.aboutTitle}
-        imageSrc="/rd.png"
-        imageAlt="תמונה לדוגמה"
-        buttonText={t.aboutButton}
-        buttonHref={`/about`}
-      />
-    </section>
-
-    <section id="contact" class="max-w-xl mx-auto px-4 py-12">
-
-    <ContactForm  client:only="react" />
-  </section>
 </BaseLayout>

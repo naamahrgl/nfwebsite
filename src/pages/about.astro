@@ -26,16 +26,18 @@ const content = {
 
 <BaseLayout pageTitle={content.title} }>
   <section class="py-16 md:py-24 px-4">
-    <div class="container mx-auto flex flex-col gap-8">
-      <Box className="p-8 ">
+    <div class="container mx-auto flex flex-row gap-8">
+      <Box className="p-8  ">
         <Title text={content.title} size="lg" className="mb-2" />
-
+        <div class="container mx-auto flex flex-row gap-8">
+<div>
         {content.paragraphs.map((p, idx) => (
           <p class="mb-4 text-[var(--light)] leading-relaxed">{p}</p>
         ))}
-    <Image src="/about.jpg" alt='' className="w-full h-full rounded-lg shadow-lg" />
+        </div>
+    <Image src="/about.jpg" alt='' className="max-w-60 rounded-lg shadow-lg" />
 
-
+</div>
       </Box>
 
     </div>

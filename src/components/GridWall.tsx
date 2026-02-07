@@ -11,6 +11,7 @@ type ImageItem = {
 type VimeoItem = {
   type: "vimeo"
   videoId: string
+    cover: string
   title?: string
 subtitle?: string
 
@@ -20,10 +21,12 @@ export type MediaItem = ImageItem | VimeoItem
 
 type GridWallProps = {
   items: MediaItem[]
+    onSelect?: (item: MediaItem) => void
+
 }
 
 
-export default function GridWall({ items }: GridWallProps) {
+export default function GridWall({ items, onSelect }: GridWallProps) {
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8">
       <div className="
@@ -35,30 +38,34 @@ export default function GridWall({ items }: GridWallProps) {
     
     {/* קוביית המדיה */}
     <figure
+      onClick={() => onSelect?.(item)}
       className="
         w-full
         overflow-hidden
         rounded-xl
         bg-neutral-900
         aspect-[16/9]
+           cursor-pointer
+    w-full overflow-hidden rounded-xl
+    bg-neutral-900 aspect-[16/9]
       "
     >
-      {item.type === "image" && (
-        <img
-          src={item.src}
-          alt={item.title ?? ""}
-          className="w-full h-full object-cover"
-        />
-      )}
+{item.type === "image" && (
+  <img
+    src={item.src}
+    alt={item.title ?? ""}
+    className="w-full h-full object-cover"
+  />
+)}
 
-      {item.type === "vimeo" && (
-        <iframe
-          src={`https://player.vimeo.com/video/${item.videoId}`}
-          className="w-full h-full"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-        />
-      )}
+{item.type === "vimeo" && (
+  <img
+    src={item.cover}
+    alt={item.title ?? ""}
+    className="w-full h-full object-cover"
+  />
+)}
+
     </figure>
 
     {/* כותרת + סאב */}
