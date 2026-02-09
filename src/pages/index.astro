@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MediaGallery from '../components/Gallery'
+import { Box, Title, Image } from "../components/ui";
 import GridWall from "../components/GridWall";
 import { homeMedia } from "../media/home";
 import { VideoModal } from "../components/Modal"
@@ -15,20 +16,18 @@ import ImageWall from "../components/ImageWall";
 const { params } = Astro;
 const t = {
 title: 'Naama Ofir',
-	    aboutTitle: 'About',
- 
-    video: "Video and Motion",
-        animation: "3D Animation",
-    photo: "Photography",
-    contact: 'Contact',
-    recommendations: 'Recommendations',
-    pageTitle: "Home",
-    heroTitle: "Naama Ofir",
-    subtitle: "Editor, Designer and Animator",
+    abouttitle: "About Me",
+    paragraphs: [
+"Hi, I'm Naama.",
+" I'm a video editor, motion designer, and 3D character animator proficient in After Effects, Premiere Pro, and the Adobe Suite, as well as Maya and Blender.",
+"When I’m not animating, you’ll likely find me behind a camera pursuing my passion for photography.",
 
-        aboutButton: "Learn More",
+"EDUCATION",
 
-    servicesButton: "More info",
+"BA / Animation - Bezalel Academy of Art & Design",
+"Jerusalem, Israel"
+    ],
+
 
   
 };
@@ -39,6 +38,35 @@ const sections = ["hero","culture", "food", "graffiti",  "recs", "about","contac
 
 
 <BaseLayout pageTitle={t.title}>
+	
+	
+<section class="py-16 md:py-24 px-4">
+  <div class="container mx-auto">
+    <Box className="p-8">
+      <Title text={t.abouttitle} size="lg" className="mb-4" />
+
+      <div class="flex flex-col md:flex-row gap-8 items-start">
+
+        <Image
+          src="/about.jpg"
+          alt=""
+          className="w-full md:w-60 max-w-full h-auto rounded-lg shadow-lg object-cover flex-shrink-0"
+        />
+
+        <div>
+          {t.paragraphs.map((p) => (
+            <p class="mb-1 text-[var(--light)] leading-relaxed">
+              {p}
+            </p>
+          ))}
+        </div>
+
+      </div>
+    </Box>
+  </div>
+</section>
+
+
   <MediaGallery items={homeMedia.items} client:visible />
 
 </BaseLayout>

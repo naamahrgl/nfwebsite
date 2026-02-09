@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MediaGallery from "../components/Gallery";
 import GriidWall from "../components/GridWall";
 import { mediaMap, type MediaKey } from "../media/map";
 
@@ -17,5 +18,5 @@ const data = mediaMap[media];
   <h1 class="px-4 sm:px-6 lg:px-8 mb-6 text-2xl text-black font-medium">
   {data.title}
 </h1>
-  <GriidWall items={data.items} client:visible />
+  <MediaGallery items={data.items} client:visible />
 </BaseLayout>

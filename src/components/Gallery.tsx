@@ -4,7 +4,7 @@ import { VideoModal } from "./Modal"
 import type { MediaItem } from "./GridWall"
 
 type Props = {
-  items: MediaItem[]
+  items: readonly MediaItem[]
 }
 
 export default function MediaGallery({ items }: Props) {

@@ -5,6 +5,8 @@ type ImageItem = {
   src: string
   title?: string
    subtitle?: string
+   year?: string
+
 
 }
 
@@ -14,13 +16,14 @@ type VimeoItem = {
     cover: string
   title?: string
 subtitle?: string
+year?: string
 
 }
 
 export type MediaItem = ImageItem | VimeoItem
 
 type GridWallProps = {
-  items: MediaItem[]
+  items: readonly MediaItem[]
     onSelect?: (item: MediaItem) => void
 
 }
@@ -42,11 +45,10 @@ export default function GridWall({ items, onSelect }: GridWallProps) {
       className="
         w-full
         overflow-hidden
-        rounded-xl
         bg-neutral-900
         aspect-[16/9]
            cursor-pointer
-    w-full overflow-hidden rounded-xl
+    w-full overflow-hidden 
     bg-neutral-900 aspect-[16/9]
       "
     >
@@ -79,6 +81,11 @@ export default function GridWall({ items, onSelect }: GridWallProps) {
         {item.subtitle && (
           <div className="text-xs text-neutral-500">
             {item.subtitle}
+          </div>
+        )}
+                {item.year && (
+          <div className="text-xs text-neutral-500">
+            {item.year}
           </div>
         )}
       </div>

@@ -8,7 +8,9 @@ export const videoMedia = {
       videoId: "950842039",
       cover: "/Pharmaceutical company.png",
             title: "Pharmaceutical company",
-            subtitle: "Personal work, 2024"
+            subtitle: "Personal work",
+                              year: "2024"
+
 
     },
     {
@@ -17,7 +19,9 @@ export const videoMedia = {
             cover: "/Bemeitavi.webp",
 
       title: "Bemeitavi",
-      subtitle: "Short impact video highlighting a non-profit organization’s key achievements over the past year, 2026"
+      subtitle: "Short impact video highlighting a non-profit organization’s key achievements over the past year",
+                        year: "2026"
+
 
     },
         {
@@ -26,7 +30,9 @@ export const videoMedia = {
                   cover: "/Moon woman.webp",
 
       title: "Moon Woman",
-                  subtitle: "Personal work, 2024"
+                  subtitle: "Personal work",
+                                    year: "2024"
+
 
     },
     {
@@ -35,7 +41,9 @@ export const videoMedia = {
                   cover: "/We love blue.png",
 
       title: "We love blue",
-                  subtitle: "Personal work, 2023"
+                  subtitle: "Personal work",
+                                    year: "2023"
+
 
     },    {
       type: "vimeo",
@@ -43,7 +51,8 @@ export const videoMedia = {
                   cover: "/Dialogue opener.webp",
 
       title: "Dialogue opener",
-                  subtitle: "Personal work, 2024"
+                  subtitle: "Personal work",
+                  year: "2024"
 
     },
     {
@@ -55,5 +64,16 @@ export const videoMedia = {
                   subtitle: "2025"
 
     },
+        {
+      type: "vimeo",
+      videoId: "1163008464",
+      cover: "/SpotifyUI.webp",
+
+      title: "Spotify UI",
+                  subtitle: "Personal work",
+                                    year: "2026"
+
+
+    },
   ],
-}
+} as const

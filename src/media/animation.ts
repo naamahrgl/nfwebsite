@@ -12,4 +12,4 @@ export const aniMedia = {
       subtitle: "2025"
     },
     ],
-};
+} as const

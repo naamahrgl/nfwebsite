@@ -1,21 +1,7 @@
+import type { MediaItem } from "./GridWall"
 
-type ImageItem = {
-  type: "image"
-  src: string
-  title?: string
-   subtitle?: string
 
-}
 
-type VimeoItem = {
-  type: "vimeo"
-  videoId: string
-  title?: string
-subtitle?: string
-
-}
-
-export type MediaItem = ImageItem | VimeoItem
 
 
 
