@@ -40,23 +40,24 @@ export default function GridWall({ items, onSelect }: GridWallProps) {
   <div key={index} className="flex flex-col gap-2">
     
     {/* קוביית המדיה */}
-    <figure
-      onClick={() => onSelect?.(item)}
-      className="
-        w-full
-        overflow-hidden
-        bg-neutral-900
-        aspect-[16/9]
-           cursor-pointer
-    w-full overflow-hidden 
-    bg-neutral-900 aspect-[16/9]
-      "
-    >
+<figure
+  onClick={() => item.type === "vimeo" && onSelect?.(item)}
+  className="
+    relative
+    w-full
+    overflow-hidden
+    bg-neutral-900
+    aspect-[16/9]
+    group
+    cursor-pointer
+  "
+>
+
 {item.type === "image" && (
   <img
     src={item.src}
     alt={item.title ?? ""}
-    className="w-full h-full object-cover"
+    className="w-full h-full object-cover "
   />
 )}
 
@@ -64,7 +65,7 @@ export default function GridWall({ items, onSelect }: GridWallProps) {
   <img
     src={item.cover}
     alt={item.title ?? ""}
-    className="w-full h-full object-cover"
+  className="w-full h-full object-cover transition duration-300 group-hover:brightness-75"
   />
 )}
 

@@ -13,7 +13,8 @@ export const navlinks =
   lg:static
   fixed inset-0
 flex
-   text-center 
+text-center
+   md:text-left
   `;
 export const navlinkItem = "text-[var(--light)]    hover:text-[var(--main)] transition-colors duration-150";
 export const header =

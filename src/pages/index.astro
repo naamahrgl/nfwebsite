@@ -17,6 +17,7 @@ const { params } = Astro;
 const t = {
 title: 'Naama Ofir',
     abouttitle: "About Me",
+	contact: "Contact",
     paragraphs: [
 "Hi, I'm Naama.",
 " I'm a video editor, motion designer, and 3D character animator proficient in After Effects, Premiere Pro, and the Adobe Suite, as well as Maya and Blender.",
@@ -42,7 +43,7 @@ const sections = ["hero","culture", "food", "graffiti",  "recs", "about","contac
 	
 <section class="py-16 md:py-24 px-4">
   <div class="container mx-auto">
-    <Box className="p-8">
+
       <Title text={t.abouttitle} size="lg" className="mb-4" />
 
       <div class="flex flex-col md:flex-row gap-8 items-start">
@@ -62,9 +63,40 @@ const sections = ["hero","culture", "food", "graffiti",  "recs", "about","contac
         </div>
 
       </div>
-    </Box>
   </div>
 </section>
+<section class="py-16 md:py-24 px-4">
+  <div class="container mx-auto">
+
+    <Title text={t.contact} size="lg" className="mb-4" />
+
+    <div class="flex items-center justify-between mt-4">
+
+      <!-- שמאל -->
+      <a 
+        href="mailto:nofir6993@gmail.com" 
+        class="text-sm text-black hover:underline hover:text-brand-dark"
+      >
+        nofir6993@gmail.com
+      </a>
+
+      <!-- ימין -->
+      <div class="flex gap-4">
+        <a href="http://www.linkedin.com/in/naama-ofir-546750180">
+          <img src="/InBug-Black.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+
+        <a href="mailto:nofir6993@gmail.com">
+          <img src="/email.svg" alt="email" class="w-6 h-6" />
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
 
 
   <MediaGallery items={homeMedia.items} client:visible />
