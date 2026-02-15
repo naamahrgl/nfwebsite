@@ -9,8 +9,8 @@ export const TW = {
   },
   buttons: {
     base: "px-6 py-2 rounded-full font-semibold transition-all duration-200",
-    primary: "bg-black/20 text-white hover:bg-white/20",
-    secondary: "bg-[var(--light)] text-white hover:bg-[#E8E9EB]",
+    primary: "bg-white text-black hover:bg-black/60 border",
+    secondary: "bg-white text-black hover:bg-black/60 border",
             roundbase: "p-2  items-center justify-center",
     round: "w-12 h-12 rounded-full  bg-[var(--light)] items-center justify-center ",
 

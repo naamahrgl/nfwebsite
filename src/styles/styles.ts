@@ -5,7 +5,7 @@ export const navlinks =
   `
   hidden
   lg:flex
-  gap-3
+  gap-7
   bg-[var(--accent)]
   p-4
   z-50
