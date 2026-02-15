@@ -7,18 +7,21 @@ import { Box, Title, Button, Image } from '../components/ui';
 
 const content = {
 
-    title: "About Me",
+    title: "About me",
     paragraphs: [
 "Hi, I'm Naama.",
-" I'm a video editor, motion designer, and 3D character animator proficient in After Effects, Premiere Pro, and the Adobe Suite, as well as Maya and Blender.",
-"When I’m not animating, you’ll likely find me behind a camera pursuing my passion for photography.",
-
-"EDUCATION",
-
+"I'm a video editor, motion designer, and 3D character animator",
+"proficient in After Effects, Premiere Pro, and the Adobe Suite", 
+"as well as Maya and Blender.",
+"When I’m not animating, you’ll likely find me",
+"behind a camera pursuing my passion for photography.",],
+educationtitle:
+"Education",
+edipa: [
 "BA / Animation - Bezalel Academy of Art & Design",
 "Jerusalem, Israel"
     ],
-
+contact: "Contact"
 };
 
 
@@ -26,22 +29,65 @@ const content = {
 
 <BaseLayout pageTitle={content.title} }>
   <section class="py-16 md:py-24 px-4">
-    <div class="container mx-auto flex flex-row gap-8">
-      <Box className="p-8  ">
-        <Title text={content.title} size="lg" className="mb-2" />
-        <div class="container mx-auto flex flex-row gap-8">
-<div>
+<div class="container mx-auto flex flex-col lg:flex-row items-start gap-4">
+
+          
+<div class="w-full lg:w-1/2">
+          <Title text={content.title} size="lg" className="mb-6" />
+
         {content.paragraphs.map((p, idx) => (
           <p class="mb-4 text-[var(--light)] leading-relaxed">{p}</p>
         ))}
+                <Title text={content.educationtitle} size="lg" className="mb-6" />
+<div>
+        {content.edipa.map((p, idx) => (
+          <p class="mb-4 text-[var(--light)] leading-relaxed">{p}</p>
+        ))}
         </div>
-    <Image src="/about.jpg" alt='' className="max-w-60 rounded-lg shadow-lg" />
+          <div class="container mx-auto">
 
-</div>
-      </Box>
+    <Title text={content.contact} size="lg" className="mb-4" />
+
+    <div class="flex items-center justify-between mt-4">
+
+      <!-- שמאל -->
+      <a 
+        href="mailto:nofir6993@gmail.com" 
+        class="text-sm text-black hover:underline hover:text-brand-dark"
+      >
+        nofir6993@gmail.com
+      </a>
+
+      <!-- ימין -->
+      <div class="flex gap-4">
+        <a href="http://www.linkedin.com/in/naama-ofir-546750180">
+          <img src="/InBug-Black.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+
+        <a href="mailto:nofir6993@gmail.com">
+          <img src="/email.svg" alt="email" class="w-6 h-6" />
+        </a>
+      </div>
 
     </div>
 
+  </div>
+        </div>
+        
+<div class="w-full lg:w-1/2 flex justify-center">
+  <Image
+    src="/about.jpg"
+    alt=""
+    className="w-full max-w-md h-auto rounded-lg shadow-lg"
+  />
+</div>
+        
+
+
+    </div>
+
+
+</div>
   </section>
     <section class="max-w-6xl mx-auto px-4 py-12">
         <div class="text-center">

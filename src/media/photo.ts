@@ -1,7 +1,7 @@
 // src/content/media/video.ts
 
 export const photoMedia = {
-  title: "PHOTOGRAPHY",
+  title: "Photography",
   subtitle: "Selected works", 
   items: [
     {

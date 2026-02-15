@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter.woff2') format('woff2');
+  font-family: 'PontanoSans';
+  src: url('/fonts/PontanoSans.woff2') format('woff2');
   font-weight: 100 900;
-  font-style: normal;
+  font-style: light;
   font-display: swap;
 }
 
 @theme {
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'PontanoSans', sans-serif;
 }
 
 :root {

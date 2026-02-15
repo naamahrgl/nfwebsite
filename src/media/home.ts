@@ -5,7 +5,7 @@ export const homeMedia: {
   subtitle: string
   items: MediaItem[]
 } = {
-  title: "3D ANIMATION",
+  title: "3D animation",
   subtitle: "Selected works",
   items: [
     {

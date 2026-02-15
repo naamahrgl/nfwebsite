@@ -16,9 +16,9 @@ export const TW = {
 
   },
   titles: {
-    sm: "text-xl font-semibold text-[var(--light)]",
-    md: "text-3xl font-bold text-[var(--light)]",
-    lg: "text-5xl font-extrabold text-[var(--light)]",
+    sm: "text-l font-semibold text-[var(--light)] tracking-[2px] ",
+    md: "text-xl font-bold text-[var(--light)] tracking-[2px]",
+    lg: "text-2xl font-extrabold text-[var(--light)] tracking-[2px]",
   },
   text: {
     base: "text-white/90",

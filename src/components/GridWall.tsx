@@ -31,20 +31,23 @@ type GridWallProps = {
 
 export default function GridWall({ items, onSelect }: GridWallProps) {
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8">
-      <div className="
-        mx-auto grid max-w-[1800px]
-        grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3
-      ">
+    <section className="w-full px-4 sm:px-6 lg:px-8 ">
+<div className="
+  mx-auto grid max-w-[1800px]
+  grid-cols-[repeat(auto-fit,minmax(300px,500px))]
+  gap-6
+  justify-center
+">
+
 {items.map((item, index) => (
-  <div key={index} className="flex flex-col gap-2">
+  <div key={index} className="flex flex-col gap-2 ">
     
     {/* קוביית המדיה */}
 <figure
   onClick={() => item.type === "vimeo" && onSelect?.(item)}
   className="
     relative
-    w-full
+w-full
     overflow-hidden
     bg-neutral-900
     aspect-[16/9]

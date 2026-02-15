@@ -1,6 +1,6 @@
 
 export const videoMedia = {
-  title: "VIDEO & MOTION",
+  title: "Video & Motion",
   subtitle: "Selected works",
   items: [
     {

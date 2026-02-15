@@ -1,7 +1,7 @@
 // src/content/media/video.ts
 
 export const aniMedia = {
-  title: "3D ANIMATION",
+  title: "3D animation",
   subtitle: "Selected works", 
   items: [
         {

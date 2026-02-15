@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import MediaGallery from "../components/Gallery";
 import GriidWall from "../components/GridWall";
 import { mediaMap, type MediaKey } from "../media/map";
+import { Title } from "../components/ui";
 
 export function getStaticPaths() {
   return Object.keys(mediaMap).map((key) => ({
@@ -15,8 +16,7 @@ const data = mediaMap[media];
 ---
 
 <BaseLayout pageTitle={data.title}>
-  <h1 class="px-4 sm:px-6 lg:px-8 mb-6 text-2xl text-black font-medium">
-  {data.title}
-</h1>
+            <Title text={data.title} size="lg" className="mb-6" />
+
   <MediaGallery items={data.items} client:visible />
 </BaseLayout>

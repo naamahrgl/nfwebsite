@@ -5,7 +5,6 @@ export const navlinks =
   `
   hidden
   lg:flex
-  flex-col
   gap-3
   bg-[var(--accent)]
   p-4
@@ -14,11 +13,10 @@ export const navlinks =
   fixed inset-0
 flex
 text-center
-   md:text-left
   `;
 export const navlinkItem = "text-[var(--light)]    hover:text-[var(--main)] transition-colors duration-150";
 export const header =
-  "relative    p-4 bg-[var(--accent)] flex flex-col lg:flex-row  ";
+  "relative    p-4 bg-[var(--accent)] flex items-center justify-between   top-0 z-50 ";
 export const logo = "flex items-center gap-2";  
 export const langlink =
   "text-[10px] md:text-sm text-[var(--light)] hover:text-black transition-colors duration-150";
