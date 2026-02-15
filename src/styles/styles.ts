@@ -1,5 +1,5 @@
 export const hamburger =
-  "flex flex-col justify-between w-6 h-6 cursor-pointer group lg:hidden";
+  "flex flex-col justify-between w-16 h-8 cursor-pointer group lg:hidden";
 export const line = "block h-0.5 w-full bg-[var(--light)] mb-1 group-hover:bg-black";
 export const navlinks =
   `

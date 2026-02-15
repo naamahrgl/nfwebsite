@@ -1,49 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import MediaGallery from '../components/Gallery'
-import { Box, Title, Image } from "../components/ui";
-import GridWall from "../components/GridWall";
-import { homeMedia } from "../media/home";
-import { VideoModal } from "../components/Modal"
-import type { MediaItem } from "../components/GridWall";
-import { SectionItem, RoundButton } from "../components/ui";
-import RecommendationsCarousel from "../components/Carousel";
-import { ContactForm } from "../components/ui";
-import ImageWall from "../components/ImageWall";
+import MediaGallery from "../components/Gallery";
+import { getCollection } from "astro:content";
+import { mapToMediaItem } from "../lib/mapToMediaItem";
 
+const projects = await getCollection("media");
 
+const homeProjects = projects
+  .filter((p) => p.data.homepage)
+  .map(mapToMediaItem);
 
-const { params } = Astro;
 const t = {
-title: 'Naama Ofir',
-    abouttitle: "About Me",
-	contact: "Contact",
-    paragraphs: [
-"Hi, I'm Naama.",
-" I'm a video editor, motion designer, and 3D character animator proficient in After Effects, Premiere Pro, and the Adobe Suite, as well as Maya and Blender.",
-"When I’m not animating, you’ll likely find me behind a camera pursuing my passion for photography.",
-
-"EDUCATION",
-
-"BA / Animation - Bezalel Academy of Art & Design",
-"Jerusalem, Israel"
-    ],
-
-
-  
+  title: "Naama Ofir"
 };
-
-const sections = ["hero","culture", "food", "graffiti",  "recs", "about","contact"];
-
 ---
 
-
 <BaseLayout pageTitle={t.title}>
-	
-
-
-
-
-  <MediaGallery items={homeMedia.items} client:visible />
-
+  <MediaGallery items={homeProjects} client:visible />
 </BaseLayout>

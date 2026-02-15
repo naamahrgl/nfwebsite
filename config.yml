@@ -1,0 +1,20 @@
+collections:
+  - name: "media"
+    label: "Media"
+    folder: "src/content/media"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: false }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Year", name: "year", widget: "number", required: false }
+      - { label: "Vimeo ID", name: "vimeoId", widget: "string", required: false }
+      - { label: "Cover Image", name: "cover", widget: "image" }
+      - { label: "Show on homepage", name: "homepage", widget: "boolean", default: false }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Video & Motion", value: "video_and_motion" }
+          - { label: "Photography", value: "photography" }
+          - { label: "Animation", value: "animation" }

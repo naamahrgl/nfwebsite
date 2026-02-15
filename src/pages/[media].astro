@@ -1,22 +1,36 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MediaGallery from "../components/Gallery";
-import GriidWall from "../components/GridWall";
-import { mediaMap, type MediaKey } from "../media/map";
+import { getCollection } from "astro:content";
+import { mapToMediaItem } from "../lib/mapToMediaItem";
 import { Title } from "../components/ui";
 
-export function getStaticPaths() {
-  return Object.keys(mediaMap).map((key) => ({
-    params: { media: key },
+export async function getStaticPaths() {
+  const items = await getCollection("media");
+
+  const types = [...new Set(items.map((item) => item.data.type))];
+  return types.map((type) => ({
+    params: { media: type },
   }));
 }
 
-const media = Astro.params.media as MediaKey;
-const data = mediaMap[media];
+const { media } = Astro.params;
+
+const allItems = await getCollection("media");
+
+const filtered = allItems
+  .filter((item) => item.data.type === media)
+  .map(mapToMediaItem);
+
+const t = {
+  video_and_motion: "Video & Motion",
+  photography: "Photography",
+  animation: "3D animation"
+};
+const pagetitle = t[media]
 ---
 
-<BaseLayout pageTitle={data.title}>
-            <Title text={data.title} size="lg" className="mb-1" />
-
-  <MediaGallery items={data.items} client:visible />
+<BaseLayout pageTitle={media}>
+  <Title text={pagetitle} size="lg" className="mb-6" />
+  <MediaGallery items={filtered} client:visible />
 </BaseLayout>
