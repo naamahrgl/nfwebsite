@@ -1,6 +1,6 @@
 ---
 type: "video_and_motion"
-videoId: "950846203"
+vimeoId: "950846203"
 cover: "/We love blue.png"
 
 title: "We love blue"
