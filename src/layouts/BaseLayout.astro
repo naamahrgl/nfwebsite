@@ -17,22 +17,31 @@ const { pageTitle} = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 <script is:inline>
-  // @ts-ignore
-  if (window.netlifyIdentity) {
-    // @ts-ignore
-    window.netlifyIdentity.on("init", function(user) {
-      if (!user) {
-        // @ts-ignore
-        window.netlifyIdentity.on("login", function() {
-          document.location.href = "/admin/";
+  if (typeof window !== "undefined") {
+    const script = document.createElement("script");
+    script.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init();
+
+        // אם יש invite token ב-URL
+        if (window.location.hash.includes("invite_token")) {
+          window.netlifyIdentity.open();
+        }
+
+        window.netlifyIdentity.on("login", () => {
+          window.location.href = "/admin/";
         });
       }
-    });
+    };
   }
 </script>
+
 
 
 
