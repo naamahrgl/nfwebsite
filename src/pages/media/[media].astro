@@ -1,9 +1,9 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import MediaGallery from "../components/Gallery";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import MediaGallery from "../../components/Gallery";
 import { getCollection } from "astro:content";
-import { mapToMediaItem } from "../lib/mapToMediaItem";
-import { Title } from "../components/ui";
+import { mapToMediaItem } from "../../lib/mapToMediaItem";
+import { Title } from "../../components/ui";
 
 export async function getStaticPaths() {
   const items = await getCollection("media");
