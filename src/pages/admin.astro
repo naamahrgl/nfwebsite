@@ -1,9 +1,13 @@
 ---
 Astro.response.headers.set("Content-Type", "text/html");
 ---
-
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/admin/index.html" />
+    <script>
+      // Redirect to static index.html תוך שמירה על hash
+      const hash = window.location.hash;
+      window.location.replace('/admin/index.html' + hash);
+    </script>
   </head>
+  <body></body>
 </html>
