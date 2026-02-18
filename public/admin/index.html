@@ -14,9 +14,11 @@
   </head>
   <body>
     <script>
-      CMS.init({
-        config: '/admin/config.yml',
-      });
+      fetch('/admin/config.yml')
+        .then(response => response.text())
+        .then(config => {
+          CMS.init({ config: config });
+        });
     </script>
   </body>
 </html>
