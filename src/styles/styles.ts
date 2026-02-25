@@ -20,7 +20,7 @@ md:flex-row
   `;
 export const navlinkItem = "text-[var(--light)]    hover:text-[var(--main)] transition-colors duration-150";
 export const header =
-  "relative    p-4 bg-[var(--accent)] flex items-center justify-between   top-0 z-50 ";
+  "relative    p-4 bg-[var(--accent)] flex items-center justify-between  pt-12 top-0 z-50 ";
 export const logo = "flex items-center gap-2";  
 export const langlink =
   "text-[10px] md:text-sm text-[var(--light)] hover:text-black transition-colors duration-150";

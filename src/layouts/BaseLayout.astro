@@ -5,10 +5,10 @@ import "../styles/global.css";
 
 interface Props {
   pageTitle: string;
-
+description: string
 }
 
-const { pageTitle} = Astro.props;
+const { pageTitle, description} = Astro.props;
 ---
 
 <html >
@@ -16,8 +16,13 @@ const { pageTitle} = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={Astro.url.href} />
     <title>{pageTitle}</title>
-
+      <meta name="description" content={description } />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url.href} />
 
 
 

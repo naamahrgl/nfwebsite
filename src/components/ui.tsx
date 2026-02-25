@@ -68,7 +68,7 @@ interface TitleProps {
 }
 
 export function Title({ text, size = "md", className = "" }: TitleProps) {
-  return <h2 className={`${TW.titles[size]} ${className}`}>{text}</h2>;
+  return <h1 className={`${TW.titles[size]} ${className}`}>{text}</h1>;
 }
 
 /* -------------------- Box -------------------- */

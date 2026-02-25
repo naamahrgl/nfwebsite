@@ -11,11 +11,12 @@ const homeProjects = projects
   .map(mapToMediaItem);
 
 const t = {
-  title: "Naama Ofir"
+  title: "Naama Ofir",
+ description: "Video editor, motion designer and 3D character animator. Discover commercial projects, branded content, animation and photography by Naama Ofir."
 };
 ---
 
-<BaseLayout pageTitle={t.title}>
+<BaseLayout pageTitle={t.title} description={t.description}>
   <MediaGallery items={homeProjects} client:visible />
    <!-- Load identity widget RAW -->
     <script is:inline>

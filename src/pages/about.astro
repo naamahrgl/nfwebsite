@@ -8,6 +8,7 @@ import { Box, Title, Button, Image } from '../components/ui';
 const content = {
 
     title: "About me",
+    description:'Naama Ofir is a video editor, motion designer and 3D character animator specializing in commercial storytelling, branded content and creative visual production.',
     paragraphs: [
 "Hi, I'm Naama.",
 "I'm a video editor, motion designer, and 3D character animator,",
@@ -25,7 +26,7 @@ contact: "Contact"
 
 ---
 
-<BaseLayout pageTitle={content.title} }>
+<BaseLayout pageTitle={content.title} description={content.description}>
   <section class=" px-4">
 <div class="container mx-auto flex flex-col lg:flex-row items-start gap-4">
 
@@ -62,6 +63,7 @@ contact: "Contact"
 
       <!-- ימין -->
       <div class="flex gap-4">
+                            <a href="https://wa.me/0544422615"><img src='/Digital_Glyph_Black.svg' alt="Whatsapp" class="w-6 h-6" /></a>
         <a href="http://www.linkedin.com/in/naama-ofir-546750180">
           <img src="/InBug-Black.png" alt="LinkedIn" class="w-6 h-6" />
         </a>
