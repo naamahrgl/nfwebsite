@@ -1,5 +1,5 @@
 ---
-cover: /uploads/dsc00581.webp
+cover: /uploads/dsc02273.webp
 homepage: false
 type: photography
 ---
