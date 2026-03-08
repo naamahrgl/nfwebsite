@@ -1,4 +1,7 @@
 ---
+title: Meet the Aviv Group family - Ohad Kafri
+subtitle: a Bizit reel for Aviv Group
+year: 2026
 vimeoId: "1171569019"
 cover: /uploads/אוהד-כפרי-ריל.png
 homepage: false
