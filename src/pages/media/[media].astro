@@ -29,9 +29,10 @@ const t = {
 
 };
 const content = t[media]
+const pagename = 'Naama Ofir | ' + content.title
 ---
 
-<BaseLayout pageTitle={content.title} description={content.description}>
+<BaseLayout pageTitle={pagename} description={content.description}>
   <Title text={content.title} size="lg" className="mb-6" />
   <MediaGallery items={filtered} client:visible />
 </BaseLayout>

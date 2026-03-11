@@ -8,6 +8,7 @@ import { Box, Title, Button, Image } from '../components/ui';
 const content = {
 
     title: "About me",
+    pagename: 'Naama Ofir | About' ,
     description:'Naama Ofir is a video editor, motion designer and 3D character animator specializing in commercial storytelling, branded content and creative visual production.',
     paragraphs: [
 "Hi, I'm Naama.",
@@ -26,7 +27,7 @@ contact: "Contact"
 
 ---
 
-<BaseLayout pageTitle={content.title} description={content.description}>
+<BaseLayout pageTitle={content.pagename} description={content.description}>
   <section class=" px-4">
 <div class="container mx-auto flex flex-col lg:flex-row items-start gap-4">
 
