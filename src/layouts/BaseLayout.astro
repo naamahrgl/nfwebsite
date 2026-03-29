@@ -13,10 +13,23 @@ const { pageTitle, description} = Astro.props;
 
 <html >
   <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-866E307NG1"></script>
+
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){
+    window.dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-866E307NG1');
+</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="canonical" href="https://naamaofir.com/" />
+<link rel="canonical" href={Astro.url.href} />
   <link rel="sitemap" href="/sitemap-index.xml" />
 
     <title>{pageTitle}</title>
